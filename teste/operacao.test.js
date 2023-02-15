@@ -15,6 +15,9 @@ describe('Teste da calculadora', () => {
 
         resultado = () => calculadora.sum(2, "a");
         expect(resultado).toThrow("Não é um número");
+
+        resultado = () => calculadora.sum(5,-3);
+        expect(resultado).toThrow(2)
     })
 
     it('Operação de subtração', () => {
