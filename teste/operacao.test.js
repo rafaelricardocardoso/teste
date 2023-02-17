@@ -6,16 +6,12 @@ describe('Teste da calculadora', () => {
     it('Operação de soma', () => {
         let resultado = calculadora.sum(1, 2);
         expect(resultado).toEqual(3);
-
         resultado = calculadora.sum(-1, 2);
         expect(resultado).toEqual(1);
-
         resultado = () => calculadora.sum("a", 2);
         expect(resultado).toThrow("Não é um número");
-
         resultado = () => calculadora.sum(2, "a");
         expect(resultado).toThrow("Não é um número");
-
         resultado = calculadora.sum(5,-3);
         expect(resultado).toEqual(2);
     });
@@ -23,16 +19,12 @@ describe('Teste da calculadora', () => {
     it('Operação de subtração', () => {
         let resultado = calculadora.sub(1, 2);
         expect(resultado).toEqual(-1);
-
         resultado = calculadora.sub(4, 2);
         expect(resultado).toEqual(2);
-        
         resultado = calculadora.sub(9, 6);
         expect(resultado).toEqual(3);
-
         resultado = () => calculadora.sub("a", -2);
         expect(resultado).toThrow("Não é um número");
-
         resultado = () => calculadora.sub(-2, "a");
         expect(resultado).toThrow("Não é um número");
         
@@ -78,6 +70,48 @@ describe('Teste da calculadora', () => {
          resultado = calculadora.div(6, 3);
         expect(resultado).toEqual(2);
         
+    });
+    it('Operação de Raiz', () => {
+        let resultado = calculadora.raiz(9, (1/2));
+        expect(resultado).toEqual(3);
+         resultado = calculadora.raiz(64, (1/2));
+        expect(resultado).toEqual(8);
+         resultado = calculadora.raiz(36, (1/2));
+        expect(resultado).toEqual(6);
+         resultado = calculadora.raiz(49, (1/2));
+        expect(resultado).toEqual(7);
+         resultado = calculadora.raiz(81, (1/2));
+        expect(resultado).toEqual(9);
+         resultado = calculadora.raiz(121, (1/2));
+        expect(resultado).toEqual(11);
+         resultado = calculadora.raiz(1, (1/2));
+        expect(resultado).toEqual(1);
+         resultado = calculadora.raiz(4, (1/2));
+        expect(resultado).toEqual(2);
+         resultado = calculadora.raiz(25, (1/2));
+        expect(resultado).toEqual(5);
+        
+    });
+    it('Operação de Potencia', () => {
+        let resultado = calculadora.pot(3,2);
+        expect(resultado).toEqual(9);
+         resultado = calculadora.pot(8,2);
+        expect(resultado).toEqual(64);
+         resultado = calculadora.pot(7,3);
+        expect(resultado).toEqual(343);
+         resultado = calculadora.pot(3,4);
+        expect(resultado).toEqual(81);
+         resultado = calculadora.pot(0,6);
+        expect(resultado).toEqual(0);
+         resultado = calculadora.pot(2,9);
+        expect(resultado).toEqual(512);
+         resultado = calculadora.pot(6,7);
+        expect(resultado).toEqual(279936);
+         resultado = calculadora.pot(5,3);
+        expect(resultado).toEqual(125);
+         resultado = calculadora.pot(25,4);
+        expect(resultado).toEqual(390625);
+
     });
 
 
